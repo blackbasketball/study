@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Document</title>
+    <style>
+		body {max-width: 750px; min-width: 300px; margin: 0 auto;}
+		img {display: block; max-width: 100%; }
+    </style>
+    <link rel="stylesheet" href="css/mbase.css">
+    <script src="js/adaptive.js"></script>
+    <script src="../js/jq341.js"></script>
+    <script>
+		// 设计图宽度
+		window['adaptive'].desinWidth = 750;
+		// body 字体大小 会将body字体大小设置为 baseFont / 100 + 'rem'  750的设计图一般设置为28,640的设计图一般设置为24
+		window['adaptive'].baseFont = 28;
+		// 显示最大宽度 可选
+		window['adaptive'].maxWidth = 750;
+		// 初始化
+		window['adaptive'].init();
+    </script>
+</head>
+<body>
+    <!-- 模块1 -->
+    <div class="mk1">
+        <nav>
+            <a href="#yuxi"><img src="images/mk1-1.png" alt="高效预习法"></a>
+            <a href="#shuli"><img src="images/mk1-2.png" alt="新知识梳理"></a>
+            <a href="#lianxi"><img src="images/mk1-3.png" alt="专项练习题"></a>
+            <a href="#xianjie"><img src="images/mk1-4.png" alt="免费衔接课"></a>
+        </nav>
+    </div>
+
+    <!-- 模块2 高效预习法 -->
+    <div class="mk2" id="yuxi">
+        <div class="mk-inner">
+            <div class="mk-hd">
+                <a href="javascript:void(0)">预习技巧</a>
+                <a href="javascript:void(0)">学霸经验</a>
+                <a href="javascript:void(0)">笔记攻略</a>
+            </div>
+            <div class="mk-bd">
+                <!-- 预习技巧 -->
+                <div class="bd-inner">
+                    
+                </div>
+
+                <!-- 学霸经验 -->
+                <div class="bd-inner zone" id="jingyan">
+                        
+                </div>
+                    
+                <!-- 笔记攻略 -->
+                <div class="bd-inner zone"   id="gonglue">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模块3 新知识梳理 -->
+    <div class="mk3" id="shuli">
+        <div class="mk-inner">
+            <div class="mk-hd">
+            </div>
+            <div class="mk-bd">
+                <!-- 初一 -->
+                <div class="bd-inner">
+                   
+                </div>
+
+                <!-- 初二 -->
+                <div class="bd-inner zone" id="jingyan">
+                        
+                </div>
+                    
+                <!-- 初三 -->
+                <div class="bd-inner zone"   id="gonglue">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模块4 专项练习题 -->
+    <div class="mk4" id="lianxi">
+            <div class="mk-inner">
+                <div class="mk-hd">
+                </div>
+                <div class="mk-bd">
+                    <!-- 初一 -->
+                    <div class="bd-inner">
+                       
+                    </div>
+    
+                    <!-- 初二 -->
+                    <div class="bd-inner zone" id="jingyan">
+                            
+                    </div>
+                        
+                    <!-- 初三 -->
+                    <div class="bd-inner zone"   id="gonglue">
+                        
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- 模块5 免费衔接课 -->
+    <div class="mk5" id="xianjie">
+        <div class="mk-inner">
+            <div class="mk-hd">
+            </div>
+            <div class="mk-bd">
+                <!-- 初一 -->
+                <div class="bd-inner">
+                    
+                </div>
+
+                <!-- 初二 -->
+                <div class="bd-inner zone" id="jingyan">
+                        
+                </div>
+                    
+                <!-- 初三 -->
+                <div class="bd-inner zone"   id="gonglue">
+                    
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <!-- 模块6 -->
+    <div class="mk6">
+        <a href="https://m.sanhao.com/index.template.html?tp=5&net_pro=1&parse_type=1&f_source=31&s_source=185&c_source=5&pro_man_id=573">
+            <img src="images/mk6-free.png" alt="">
+        </a>
+    </div>
+
+    <!-- 页面底部 -->
+    <footer></footer>
+    <script>
+        var hd = '';
+        var mkb = ['url(images/mk12.png)','url(images/mk13.png)','url(images/mk14.png)','url(images/mk15.png)'];
+        for(let k=1;k<mkb.length;k++){
+            $('.mk-inner').eq(k).css('backgroundImage',mkb[k]);
+            hd = `<a href="javascript:void(0)">初一年级</a>
+                <a href="javascript:void(0)">初二年级</a>
+                <a href="javascript:void(0)">初三年级</a>`;
+            $('.mk-hd').eq(k).html(hd);
+        }
+        // tab模块
+        var $mk = ['.mk2','.mk3','.mk4','.mk5'];
+        for(var i=0;i<$mk.length;i++) {
+            var mk = $mk[i];
+            $(mk).find('.mk-hd a').each(function (){
+                $(this).on('click',function (){
+                    $(this).css('backgroundImage','url(images/acolor2.png)').siblings().css('backgroundImage','url(images/acolor1.png)');
+                    $(this).closest('.mk-inner').find('.mk-bd .bd-inner').eq($(this).index()).css('display','block').siblings().hide();
+                })
+            })
+        }
+
+        //主体内容
+        var inner = [
+            {
+                left : [
+                'url(images/mk2-11.png)','url(images/mk2-21.png)','url(images/mk2-31.png)',
+                'url(images/mk3-11.png)','url(images/mk3-21.png)','url(images/mk3-31.png)',
+                'url(images/mk4-11.png)','url(images/mk4-21.png)','url(images/mk4-31.png)',
+                'url(images/mk5-11.png)','url(images/mk5-21.png)','url(images/mk5-31.png)'
+                ],
+                righta : [
+                'url(images/mk2-12.png)','url(images/mk2-22.png)','url(images/mk2-32.png)',
+                'url(images/mk3-12.png)','url(images/mk3-22.png)','url(images/mk3-32.png)',
+                'url(images/mk4-12.png)','url(images/mk4-22.png)','url(images/mk4-32.png)',
+                'url(images/mk5-12.png)','url(images/mk5-22.png)','url(images/mk5-32.png)'
+                ],
+                rightb : [
+                'url(images/mk2-13.png)','url(images/mk2-23.png)','url(images/mk2-33.png)',
+                'url(images/mk3-13.png)','url(images/mk3-23.png)','url(images/mk3-33.png)',
+                'url(images/mk4-13.png)','url(images/mk4-23.png)','url(images/mk4-33.png)',
+                'url(images/mk5-13.png)','url(images/mk5-23.png)','url(images/mk5-33.png)'
+                ]
+            },
+            {
+                left : [
+                    '初中生暑假预习高效10大方法解析，赶紧用起来！','初中学霸“自爆”学习方法！哪里不一样？','初中生如何整理笔记，如何正确整理学习笔记',
+                    '2019年人教版数学初一上学期各单元知识点总结','2019年人教版语文初二上学期各单元知识点总结','2019年人教版九年级英语全册基础知识梳理',
+                    '2019年人教版七年级语文上册单元测试卷','2019年人教版八年级英语上册单元测试卷','2019年人教版九年级数学上册章节测试卷',
+                    '【初一语文】能力提升六大秘籍精品视频课','【初二语文】古文、写作轻松过,8节精品视频课','【初三语文】市级优秀教师亲授,中考阅读、作文突破'
+                ],
+                righta : [
+                    '清华学霸告诉你:学会预习,就是在合理的“抢跑”！','如何高效率听课？初中学霸分享3大听课技巧','中考学霸笔记纯手写，初中学霸的英语笔记图片分享',
+                    '初一期中考核心考点必刷:直击命题，稳拿高分','2019人教版八年级生物上册各单元知识点总结','2019年人教版政治初三知识点总结',
+                    '粤人版七年级上册地理各章节单元测试题','2019年人教版八年级上册道德与法治单元测试卷','2019年沪科版九年级物理全册章节检测题',
+                    '【初一数学】小升初数学视频课，提升从认知开始','【初二数学】巧解一次函数，讲练结合带你飞','【初三化学】化学世界的科学探究，中考筑基视频课'
+                ],
+                rightb : [
+                    '牛师精编2019《初高中暑假预习全科重难点汇总》0元领','初中各年级及各学科学习攻略，果断收藏！','初中生学霸的秘密，尖子生的课堂笔记真正秘诀',
+                    '初一语文文言重难点字词总结，高分不愁！','2019年北师大版八年级数学上册各章知识点汇总','2019年人教版初三物理知识点汇总',
+                    '2019年人教版七年级历史上册单元测试卷（含答案）','2019年人教版八年级历史上册单元测试卷（含答案）','2019年人教版九年级化学上册单元及期中期末测试题',
+                    '【初一英语】写作技巧，考场使用写作模板视频课','【初二数学】巧用函数模型，破解实际问题','【初三英语】中考冲刺视频课，阅读不丢分，真题精讲'
+                ]
+            },
+            {
+                left : [
+                    'https://toutiao.sanhao.com/news-detail-35681.html','https://toutiao.sanhao.com/news-detail-27993.html','https://toutiao.sanhao.com/news-detail-20022.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5848.html','https://wenku.sanhao.com/ziliao-subject-5842.html','https://wenku.sanhao.com/ziliao-subject-5929.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5936.html','https://wenku.sanhao.com/ziliao-subject-5958.html','https://wenku.sanhao.com/ziliao-subject-5950.html',
+                    'https://ke.sanhao.com/m/show.html?id=2558','https://ke.sanhao.com/m/show.html?id=2619','https://ke.sanhao.com/m/show.html?id=2701'
+                ],
+                righta : [
+                    'https://toutiao.sanhao.com/news-detail-35445.html','https://toutiao.sanhao.com/news-detail-27994.html','https://toutiao.sanhao.com/news-detail-19272.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5369.html','https://wenku.sanhao.com/ziliao-subject-6066.html','https://wenku.sanhao.com/ziliao-subject-6039.html',
+                    'https://wenku.sanhao.com/ziliao-subject-101.html','https://wenku.sanhao.com/ziliao-subject-6016.html','https://wenku.sanhao.com/ziliao-subject-5930.html',
+                    'https://ke.sanhao.com/m/show.html?id=2542','https://ke.sanhao.com/m/show.html?id=1742','https://ke.sanhao.com/m/show.html?id=2734'
+                ],
+                rightb : [
+                    'https://toutiao.sanhao.com/news-detail-35532.html','https://toutiao.sanhao.com/news-detail-35443.html','https://toutiao.sanhao.com/news-detail-35837.html',
+                    'https://wenku.sanhao.com/ziliao-detail-33037.html','https://wenku.sanhao.com/ziliao-subject-5828.html','https://wenku.sanhao.com/ziliao-subject-5989.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6033.html','https://wenku.sanhao.com/ziliao-subject-6035.html','https://wenku.sanhao.com/ziliao-subject-5720.html',
+                    'https://ke.sanhao.com/m/show.html?id=1712','https://ke.sanhao.com/m/show.html?id=1743','https://ke.sanhao.com/m/show.html?id=1771'
+                ]
+            },
+            {
+                seemore : [
+                    'https://toutiao.sanhao.com/m/key/czyx','https://toutiao.sanhao.com/m/key/czxb','https://toutiao.sanhao.com/m/key/czbj',
+                    'https://wenku.sanhao.com/m/key/cyzsd','https://wenku.sanhao.com/m/key/cezsd','https://wenku.sanhao.com/m/key/cszsd',
+                    'https://wenku.sanhao.com/m/key/cylxt','https://wenku.sanhao.com/m/key/celxt','https://wenku.sanhao.com/m/key/cslxt',
+                    'https://ke.sanhao.com/m/list.html?keywords=%E5%88%9D%E4%B8%80','https://ke.sanhao.com/m/list.html?keywords=%E5%88%9D%E4%BA%8C',
+                    'https://ke.sanhao.com/m/list.html?keywords=%E5%88%9D%E4%B8%89'
+                ]
+            }
+        ]
+
+        var list = [
+            {   //预习
+                txt : [
+                    '尖子生如何预习？尖子生高效预习的5大窍门','初中三年想成为学霸？准初一制定科学合理的学习计划',
+                    '初中三年想成为学霸？准初二制定科学合理的学习计划','初中三年想成为学霸？准初二制定科学合理的学习计划',
+                    '尖子生保持高效率学习状态的24大诀窍','初中生优秀之学习习惯养成记——预习篇','暑假高效的10大预习方法，带你轻松逆袭新学期！'
+                ],
+                url : [
+                    'https://toutiao.sanhao.com/news-detail-30187.html','https://toutiao.sanhao.com/news-detail-35639.html',
+                    'https://toutiao.sanhao.com/news-detail-35640.html','https://toutiao.sanhao.com/news-detail-35641.html',
+                    'https://toutiao.sanhao.com/news-detail-35641.html','https://toutiao.sanhao.com/news-detail-35873.html',
+                    'https://toutiao.sanhao.com/news-detail-35358.html'
+                ] 
+            },
+            {   //经验
+                txt : [
+                    '如何高效率听课？初中学霸分享3大听课技巧','一位逆袭考生的心路历程｜我的中考奇迹，是怎样创造的？',
+                    '初中生一天时间如何安排最合理？学霸高效学习的秘密','清华博士震撼演讲：我是如何从初中开始逆袭的？',
+                    '如何在初三逆袭成功？关于初三实现逆袭的经验分享！','中考高分学霸细说各科拿分经验，附29条“学霸法则”',
+                    '学霸如何练成？初中尖子生的高效学习法，值得借鉴！'
+                ],
+                url : [
+                    'https://toutiao.sanhao.com/news-detail-27994.html','https://toutiao.sanhao.com/news-detail-35430.html',
+                    'https://toutiao.sanhao.com/news-detail-33091.html','https://toutiao.sanhao.com/news-detail-35161.html',
+                    'https://toutiao.sanhao.com/news-detail-28347.html','https://toutiao.sanhao.com/news-detail-28347.html',
+                    'https://toutiao.sanhao.com/news-detail-35838.html'
+                ] 
+            },
+            {   //攻略
+                txt : [
+                    '如何写好读书笔记？初中生超实用的笔记整理方法','如何做笔记最有效实用？尖子生高效学习的5大技巧',
+                    '2019《重点中学学霸笔记》，高分弯道逆袭秘笈','尖子生高效学习方法，尖子生做笔记的6大秘诀',
+                    '初中生如何整理课堂笔记，学习才能更高效?','初中生如何整理课堂笔记，学习才能更高效?',
+                    '初中生课堂笔记该怎么写，课堂笔记的整理和使用方法'
+                ],
+                url : [
+                    'https://toutiao.sanhao.com/news-detail-28393.html','https://toutiao.sanhao.com/news-detail-28186.html',
+                    'https://toutiao.sanhao.com/news-detail-34280.html','https://toutiao.sanhao.com/news-detail-21628.html',
+                    'https://toutiao.sanhao.com/news-detail-20017.html','https://toutiao.sanhao.com/news-detail-19981.html',
+                    'https://toutiao.sanhao.com/news-detail-19912.html'
+                ] 
+            },
+            {   //知识初一
+                txt : [
+                    '2019年人教版语文初一上学期各单元知识点总结','2019年人教版英语初一上学期各单元知识点总结',
+                    '2019年人教版历史初一上学期各单元知识点总结','2019年人教版地理初一上学期各单元知识点总结',
+                    '2019年人教版政治初一上学期知识点总结','2019人教版七年级生物上册各单元知识点总结',
+                    '2019年北师大版七年级数学上册各章知识点汇总'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5835.html','https://wenku.sanhao.com/ziliao-subject-5868.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5885.html','https://wenku.sanhao.com/ziliao-subject-5909.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6029.html','https://wenku.sanhao.com/ziliao-subject-6064.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5826.html'
+                ] 
+            },
+            {   //知识初二
+                txt : [
+                    '2019年人教版数学初二上学期各单元知识点总结','2019年人教版英语初二上学期各单元知识点总结',
+                    '2019年人教版历史初二上学期各单元知识点总结','2019年人教版地理初二上学期各单元知识点总结',
+                    '2019年人教版政治初二上学期知识点总结','2019年人教版八年级物理上册各章知识点总结',
+                    '2019年北师大版八年级物理上册各章知识点汇总'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5856.html','https://wenku.sanhao.com/ziliao-subject-5874.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5892.html','https://wenku.sanhao.com/ziliao-subject-5918.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6031.html','https://wenku.sanhao.com/ziliao-subject-5807.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5837.html'
+                ] 
+            },
+            {   //知识初三
+                txt : [
+                    '2019年人教版语文初三上学期各单元知识点总结','2019年人教版数学初三上学期各单元知识点总结',
+                    '2019年北师大版九年级数学上册各章知识点汇总','2019年人教版历史初三上学期各单元知识点总结',
+                    '2019年人教版地理初三上学期各单元知识点总结','2019年人教版九年级化学全册各章知识点总结',
+                    '牛津译林九年级上学期英语知识点汇总'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5924.html','https://wenku.sanhao.com/ziliao-subject-5925.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5830.html','https://wenku.sanhao.com/ziliao-subject-5932.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5933.html','https://wenku.sanhao.com/ziliao-subject-5810.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5890.html'
+                ] 
+            },
+            {   //练习初一
+                txt : [
+                    '2019年人教版七年级数学上册章节测试卷','2019年人教版七年级英语上册单元测试卷',
+                    '2019年人教版英语初一上学期综合检测卷','2019年人教版地理初一上学期综合检测卷',
+                    '2019年人教版七年级上册道德与法治单元测试卷','人教版七年级生物上册单元测试题（含答案）',
+                    '2019年人教版语文初一上学期综合检测卷'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5946.html','https://wenku.sanhao.com/ziliao-subject-5956.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5942.html','https://wenku.sanhao.com/ziliao-subject-6010.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6013.html','https://wenku.sanhao.com/ziliao-subject-5897.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6040.html'
+                ] 
+            },
+            {   //练习初二
+                txt : [
+                    '2019年人教版八年级语文上册单元测试卷','2019年人教版八年级数学上册章节测试卷',
+                    '2019年人教版数学初二上学期综合检测卷','2019年人教版英语初二上学期综合检测卷',
+                    '2019年人教版地理初二上学期综合检测卷','2019年人教版八年级物理上册章节测试卷',
+                    '2019年人教版八年级上册生物章节测试卷'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5938.html','https://wenku.sanhao.com/ziliao-subject-5948.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6054.html','https://wenku.sanhao.com/ziliao-subject-5952.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6014.html','https://wenku.sanhao.com/ziliao-subject-5998.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6008.html'
+                ] 
+            },
+            {   //练习初三
+                txt : [
+                    '2019年人教版九年级语文上册单元测试卷','2019年人教版九年级英语全册单元测试卷',
+                    '译林牛津英语九年级上册各单元测试题','2019年人教版九年级历史上册单元测试卷（含答案）',
+                    '2019年人教版地理初三上学期综合检测卷','2019年人教版九年级上册道德与法治单元测试卷',
+                    '2019年人教版九年级物理全册章节测试卷'
+                ],
+                url : [
+                    'https://wenku.sanhao.com/ziliao-subject-5940.html','https://wenku.sanhao.com/ziliao-subject-5960.html',
+                    'https://wenku.sanhao.com/ziliao-subject-5891.html','https://wenku.sanhao.com/ziliao-subject-6037.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6018.html','https://wenku.sanhao.com/ziliao-subject-6019.html',
+                    'https://wenku.sanhao.com/ziliao-subject-6000.html'
+                ] 
+            },
+            {   //衔接初一
+                txt : [
+                    '【初一数学】关键重难点衔接合集精品视频课','【初一英语】字词、语法不硬背，骨干教师亲授视频课',
+                    '【初一语文】多角度写作技巧，培养发散性思维视频课'
+                ],
+                url : [
+                    'https://ke.sanhao.com/m/show.html?id=2587','https://ke.sanhao.com/m/show.html?id=2600',
+                    'https://ke.sanhao.com/m/show.html?id=1748'
+                ] 
+            },
+            {   //衔接初二
+                txt : [
+                    '【初二数学】三角形、幂、分式，吃透期中考前难点','【初二英语】搞定句型、时态、重点语法，高效预习',
+                    '【初二物理】资深教师8节课吃透物态变化巧妙理解'
+                ],
+                url : [
+                    'https://ke.sanhao.com/m/show.html?id=2644','https://ke.sanhao.com/m/show.html?id=2684',
+                    'https://ke.sanhao.com/m/show.html?id=2692'
+                ] 
+            },
+            {   //衔接初三
+                txt : [
+                    '【初三数学】北大硕士8节课，考点难点专题式训练','【初三英语】专八教师手把手，易错易考点多角度解析',
+                    '【初三物理】电学一轮复习精讲，中考筑基视频课'
+                ],
+                url : [
+                    'https://ke.sanhao.com/m/show.html?id=2709','https://ke.sanhao.com/m/show.html?id=2717',
+                    'https://ke.sanhao.com/m/show.html?id=2726'
+                ] 
+            }
+        ]
+
+        var str = '';
+        for(let k=0;k<inner[0].left.length;k++){
+            str = `<div class="bd-hd"><ul>`
+            var strli = '';
+            for (let j=0;j<list[k].txt.length;j++){
+                strli += `<li>
+                            <span></span>
+                            <a href=${list[k].url[j]}>${list[k].txt[j]}</a>
+                        </li>`;
+            }
+            str +=strli;
+            str += `</ul></div>
+                    <div class="bd-bd"><div class="bd-l">
+                        <a href=${inner[2].left[k]} style="background-image:${inner[0].left[k]}">
+                            <span>${inner[1].left[k]}</span>
+                        </a>
+                    </div>
+                    <div class="bd-r">
+                        <a href=${inner[2].righta[k]} style="background-image:${inner[0].righta[k]}">
+                            <span>${inner[1].righta[k]}</span>
+                        </a>
+                        <a href=${inner[2].rightb[k]} style="background-image:${inner[0].rightb[k]}">
+                            <span>${inner[1].rightb[k]}</span>
+                        </a>
+                    </div>
+                    </div>
+                    <a href=${inner[3].seemore[k]} class="seemore">查看更多></a>`
+            $('.bd-inner').eq(k).html(str);
+        }
+    </script>
+</body>
+</html>

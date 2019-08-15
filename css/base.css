@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* 模块1 */
+.mk1 {
+    height: 962px;
+    background-image: url(../images/mk1.png);
+    position: relative;
+}
+.mk1 nav {
+    width: 1128px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    height: 51px;
+}
+.mk1 a {
+    display: block;
+    float: left;
+    margin-right: 62px;
+}
+.mk1 a:last-child {
+    margin-right: 0;
+}
+
+/* 高效预习法 模块2 */
+.mk2 {
+    height: 822px;
+    background-image: url(../images/mk2.png); 
+}
+.mk-inner {
+    height: 742px;
+    width: 1147px;
+    margin: 0 auto;
+    background-image: url(../images/mk12.png);
+    padding: 150px 35px 0;
+    box-sizing: border-box;
+}
+.mk-hd a {
+    display: inline-block;
+    width: 338px;
+    height: 76px;
+    margin-right: 26px;
+    line-height: 76px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 33px;
+    background-image: url(../images/acolor1.png);
+}
+.mk-hd a:last-child {
+    margin-right: 0;
+}
+.mk-hd a:first-child {
+    background-image: url(../images/acolor2.png);
+}
+.mk-bd {
+    margin-top: 25px;
+    height: 429px;
+    width: 1070px;
+    border: 2px solid #e34721;
+    background-color: #ffffff;
+    padding: 32px 0 0;
+}
+/* 隐藏 */
+.mk-bd .zone {
+    display: none;
+}
+/* 预习技巧 */
+.bd-inner {
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+.bd-l {
+    margin-right: 30px;
+}
+.bd-l a{
+    display: flex;
+    width: 480px;
+    height: 389px;
+    flex-direction: column-reverse;
+}
+.bd-l span {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 80px;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 35px 0;
+    box-sizing: border-box;
+}
+.bd-r ul {
+    height: 245px;
+}
+.bd-r li {
+    display: flex;
+}
+.bd-r li a {
+    color: #050505;
+    height: 14px;
+    margin-bottom: 16px;
+    display: block;
+    font-size: 14px;
+    line-height: 10px;
+}
+.bd-r li span {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: block;
+    background-color: #e54d27;
+}
+.bd-rbd {
+    display: flex;
+}
+.bd-rbd a {
+    display: flex;
+    width: 251px;
+    height: 144px;
+    flex-direction: column-reverse;
+}
+.bd-rbd a:first-child {
+    margin-right: 10px;
+}
+.bd-rbd a span {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 55px;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 10px 0;
+    box-sizing: border-box;
+}
+.bd-r .seemore {
+    margin-top: 10px;
+    color: #e54d27;
+    float: right;
+    font-weight: 700;
+}
+
+/* 新知识梳理 */
+.mk3 {
+    height: 820px;
+    background-image: url(../images/mk3.png);
+}
+
+/* 专项练习题 */
+.mk4 {
+    height: 857px;
+    background-image: url(../images/mk4.png);
+}
+
+/* 免费衔接课 */
+.mk5 {
+    height: 1006px;
+    background-image: url(../images/mk5.png);
+}
+.mk5 .mk-inner {
+    height: 668px;
+}
+.mk5 .mk-bd {
+    height: 355px;
+}
+.mk5 .bd-l a {
+    width: 480px;
+    height: 316px;
+}
+.mk5 .bd-r ul {
+    height: 172px;
+}
+
+/* 模块6 */
+.mk6 {
+    height: 1423px;
+    background-image: url(../images/mk6.png);
+    display: flex;
+    flex-direction: column-reverse;
+}
+.mk6 a {
+    display: block;
+    margin: 0 auto 386px;
+}
+
+/* 页面底部 */
+footer {
+    height: 171px;
+    background-image: url(../images/footer.jpg);
+}
